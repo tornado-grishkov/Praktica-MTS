@@ -1,1 +1,39 @@
+City = input('Введите город')
+price_tower_4G = 76820
+price_tower_5G = 153640
+price_equipment = input('Стоимость оборудования',)
+price_install = input('Стоимость установки вышек',)
+radius_5G = 3,8
+radius_4G = 1
+quantity_4G = input('Количество вышек 4G')
+quantity_5G = quantity_4G/radius_5G
+profit_4G = input("Прибыль с вышки 4G")
+profit_5G = input('Прибыль с вышки 5G')
+profit = profit_5G - profit_4G
+payback = (price_tower_5G - price_tower_4G)/profit
+a = input('Стоимость в долларах?')
+currency_exchange_rate = input("Курс валюты")
+price_upgrade = price_install + price_equipment + price_tower_5G
 
+class city:
+    def __init__(self,):
+        self.price_tower_4G = price_tower_4G
+        self.price_tower_5G = price_tower_5G
+        self.price_equipment = price_equipment
+        self.price_install = price_install
+        self.price_upgrade = price_upgrade
+
+    def Valuta(self):
+        if a == "Да" :
+            Price_equipment = price_equipment * currency_exchange_rate
+            Price_install = price_install * currency_exchange_rate
+            price_upgrade = Price_install + Price_equipment + price_tower_5G
+        else:
+            price_upgrade = price_install + price_equipment + price_tower_5G
+
+
+    def CENA (self):
+        print('Количество вышек для ', City,':' ,quantity_5G)
+        print('Стоимость модермизации:', quantity_5G * price_upgrade)
+        print('Прибыль', profit)
+        print('Окупаемость', payback)
